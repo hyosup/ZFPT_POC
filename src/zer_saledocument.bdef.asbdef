@@ -1,0 +1,24 @@
+/************************************************************************
+*  Module(Sub)     : SD
+*  Program Id      : ZSD09920
+*  Program Name    : [SD]장기미결 오더 리스트
+*  Object Name     : ZER_SALEDOCUMENT
+*  Type            : BEHAVIOR DEFINITION
+*  Description     : ROOT ENTITY FOR SALES DOCUMENT
+************************************************************************
+*                        MODIFICATION LOG
+*-----------------------------------------------------------------------
+*  NO CSR/PROJECT NO    DATE     AUTHOR           DESCRIPTION
+* --- -------------- ---------- -------- -------------------------------
+*  01 [FPT_POC]      2022.11.22 THUANDC3          INITIAL RELEASE
+************************************************************************/
+unmanaged implementation in class zbp_er_saledocument unique;
+strict;
+
+define behavior for ZER_SALEDOCUMENT
+lock master
+authorization master ( instance )
+{
+ action UpdateDate parameter ZI_PARAM_CHANGE_DATA_SO result [1] $self;
+ action Reject parameter ZI_PARAM_CHANGE_DATA_SO result [1] $self;
+}

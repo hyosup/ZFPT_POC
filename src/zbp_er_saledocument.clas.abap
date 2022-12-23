@@ -1,0 +1,5 @@
+CLASS zbp_er_saledocument DEFINITION PUBLIC ABSTRACT FINAL FOR BEHAVIOR OF zer_saledocument.
+ENDCLASS.
+
+CLASS zbp_er_saledocument IMPLEMENTATION.
+ENDCLASS.

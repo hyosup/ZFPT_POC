@@ -1,0 +1,22 @@
+/************************************************************************
+*  Module(Sub)     : SD
+*  Program Id      : ZSD09920
+*  Program Name    : [SD]장기미결 오더 리스트
+*  Object Name     : ZEP_SALEDOCUMENT
+*  Type            : BEHAVIOR DEFINITION
+*  Description     : PROJECTION VIEW SALES DOCUMENT
+************************************************************************
+*                        MODIFICATION LOG
+*-----------------------------------------------------------------------
+*  NO CSR/PROJECT NO    DATE     AUTHOR           DESCRIPTION
+* --- -------------- ---------- -------- -------------------------------
+*  01 [FPT_POC]      2022.11.22 THUANDC3          INITIAL RELEASE
+************************************************************************/
+projection;
+strict;
+
+define behavior for ZEP_SALEDOCUMENT
+{
+  use action UpdateDate;
+  use action Reject;
+}

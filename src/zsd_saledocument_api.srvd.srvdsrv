@@ -1,0 +1,17 @@
+@EndUserText.label: 'Service Definition Sale Document - API'
+define service ZSD_SALEDOCUMENT_API {
+  expose ZEP_SALEDOCUMENT;
+  expose I_SalesDocumentStdVH;
+  expose I_SalesOrganization;
+  expose C_SalesOfficeValueHelp;
+  expose C_SalesGroupValueHelp;
+  expose I_OverallSDDocumentRjcnStatus;
+  expose I_OverallDeliveryStatus;
+  expose I_TotalCreditCheckStatus;
+  expose I_CreditRiskClassValueHelp;
+  expose ZI_SalesDocumentRjcnReason_VH;
+  expose I_SalesOrderType;
+  expose I_DistributionChannel;
+  expose I_Division;
+  expose I_Customer_VH;
+}

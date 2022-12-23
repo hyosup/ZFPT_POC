@@ -1,0 +1,175 @@
+/************************************************************************
+*  Module(Sub)     : SD
+*  Program Id      : ZSD09920
+*  Program Name    : [SD]장기미결 오더 리스트
+*  Object Name     : ZEP_SALEDOCUMENT
+*  Type            : METADATA EXTENSIONS
+*  Description     : METADATA FOR SALES DOCUMENT
+************************************************************************
+*                        MODIFICATION LOG
+*-----------------------------------------------------------------------
+*  NO CSR/PROJECT NO    DATE     AUTHOR           DESCRIPTION
+* --- -------------- ---------- -------- -------------------------------
+*  01 [FPT_POC]      2022.11.22 THUANDC3          INITIAL RELEASE
+************************************************************************/
+@Metadata.layer: #CUSTOMER
+@UI: {
+  headerInfo: {
+    typeName: '[SD]장기미결 오더 리스트',
+    typeNamePlural: '[SD]장기미결 오더 리스트',
+    title: {
+      type: #STANDARD,
+      label: 'Sales Document'
+    }
+  },
+  presentationVariant: [ {
+    sortOrder: [ {
+      by: 'SalesOrder',
+      direction: #ASC
+    } ]
+  } ]
+}
+annotate view ZEP_SALEDOCUMENT with
+{
+  @UI: { lineItem: [ { position: 10 , importance: #HIGH, cssDefault.width: '10rem', semanticObjectAction: 'display' , type: #WITH_INTENT_BASED_NAVIGATION } ],
+         selectionField: [{ position: 130 } ]} 
+  @Consumption.semanticObject: 'SalesOrder'
+  SalesOrder;
+
+  @UI: { lineItem: [ { position: 20 , importance: #HIGH, cssDefault.width: '10rem' } ],
+         selectionField: [{ position: 90 } ]  }
+  CreationDate;
+
+  @UI: { lineItem: [ { position: 30 , importance: #HIGH, cssDefault.width: '10rem'} ],
+         selectionField: [{ position: 10 } ]  }
+  SalesOrderType;
+
+  @UI: { lineItem: [ { position: 40 , importance: #HIGH, cssDefault.width: '15rem' } ],
+         selectionField: [{ position: 20 } ]  }
+  SalesOrganization;
+
+  @UI: { lineItem: [ { position: 50 , importance: #HIGH, cssDefault.width: '10rem' } ],
+         selectionField: [{ position: 30 } ]  }
+  DistributionChannel;
+
+  @UI: { lineItem: [ { position: 60 , importance: #HIGH, cssDefault.width: '15rem' } ],
+         selectionField: [{ position: 40 } ]  }
+  OrganizationDivision;
+
+  @UI: { lineItem: [ { position: 70 , importance: #HIGH, cssDefault.width: '10rem' } ],
+         selectionField: [{ position: 50 } ]  }
+  SalesOffice;
+
+  @UI: { lineItem: [ { position: 80 , importance: #HIGH, cssDefault.width: '10rem' } ],
+         selectionField: [{ position: 60 } ]  }
+  SalesGroup;
+
+  @UI: { lineItem: [ { position: 90 , importance: #HIGH, cssDefault.width: '13rem' } ] }
+  OverallSDDocumentRejectionSts;
+
+  @UI: { lineItem: [ { position: 100 , importance: #HIGH, cssDefault.width: '13rem' } ] }
+  OverallDeliveryStatus;
+
+  @UI: { lineItem: [ { position: 110 , importance: #HIGH, cssDefault.width: '13rem' } ] ,
+         selectionField: [{ position: 110 } ]  }
+  TotalCreditCheckStatus;
+
+  @UI: { lineItem: [ { position: 120 , importance: #HIGH, cssDefault.width: '10rem' } ] }
+  CreatedByUser;
+
+  @UI: { lineItem: [ { position: 130 , importance: #HIGH, cssDefault.width: '10rem' , semanticObjectAction: 'displayFactSheet' , type: #WITH_INTENT_BASED_NAVIGATION }  ],
+         selectionField: [{ position: 70 } ]  }
+  @Consumption.semanticObject: 'Customer'
+  Customer;
+
+  @UI: { lineItem: [ { position: 140 , importance: #HIGH, cssDefault.width: '20rem' } ] }
+  SoldToPartyName;
+
+  @UI: { lineItem: [ { position: 150 , importance: #HIGH, cssDefault.width: '10rem' } ] }
+  @Consumption.semanticObject: 'BusinessPartner'
+  CustomerCreditAccount;
+
+  @UI.hidden: true
+  CreditControlArea;
+
+  @UI: { lineItem: [ { position: 160 , importance: #HIGH, cssDefault.width: '20rem' } ]  }
+  CustomerCreditAccountName;
+
+  @UI: { lineItem: [ { position: 170 , importance: #HIGH, cssDefault.width: '17rem' } ],
+         selectionField: [{ position: 80 } ]  }
+  @EndUserText.label: 'Risk Category'
+  RiskCategory;
+
+  @UI: { lineItem: [ { position: 180 , importance: #HIGH, cssDefault.width: '10rem' } ]  }
+  TransactionCurrency;
+
+  @UI: { lineItem: [ { position: 190 , importance: #HIGH, cssDefault.width: '10rem' } ]  }
+  @EndUserText.label: 'Value (Inc. Tax)'
+  Value_Inc_Tax;
+
+  @UI: { lineItem: [ { position: 200 , importance: #HIGH, cssDefault.width: '10rem' } ]  }
+  @EndUserText.label: 'Credit Currency'
+  CreditCurrency;
+
+  @UI: { lineItem: [ { position: 210 , importance: #HIGH, cssDefault.width: '15rem' } ]  }
+  @EndUserText.label: 'Credit Limit'
+  CreditLimit;
+
+  @UI: { lineItem: [ { position: 220 , importance: #HIGH, cssDefault.width: '15rem' } ]  }
+  @EndUserText.label: 'Credit Limit Left'
+  CreditLimitLeft;
+
+  @UI: { lineItem: [ { position: 230 , importance: #HIGH, cssDefault.width: '10rem' } ]  }
+  @EndUserText.label: 'Credit Limit Used'
+  CreditLimitUsed;
+
+  @UI: { lineItem: [ { position: 240 , importance: #HIGH, cssDefault.width: '10rem' } ]  }
+  @EndUserText.label: 'Special Liabilities'
+  SpecialLiabilities;
+
+  @UI: { lineItem: [ { position: 250 , importance: #HIGH, cssDefault.width: '10rem' } ]  }
+  @EndUserText.label: 'Credit Exposure'
+  CreditExposure;
+
+  @UI: { lineItem: [ { position: 260 , importance: #HIGH, cssDefault.width: '10rem' } ]  }
+  @EndUserText.label: 'Total Receivables'
+  TotalReceivables;
+
+  @UI: { lineItem: [ { position: 270 , importance: #HIGH, cssDefault.width: '10rem' } ]  }
+  @EndUserText.label: 'Open Orders'
+  OpenOrders;
+
+  @UI: { lineItem: [ { position: 280 , importance: #HIGH, cssDefault.width: '10rem' } ]  }
+  @EndUserText.label: 'Open Delivery'
+  OpenDelivery;
+
+  @UI.hidden: true
+  RejectReason;
+
+  @Consumption.filter.hidden: true
+  _SalesOrderType;
+  @Consumption.filter.hidden: true
+  _OverallSDDocumentRejectionSts;
+  @UI.hidden: true
+  SalesDocumentTypeName;
+  @UI.hidden: true
+  SalesOrganizationName;
+  @UI.hidden: true
+  DistributionChannelName;
+  @UI.hidden: true
+  DivisionName;
+  @UI.hidden: true
+  SalesOfficeName;
+  @UI.hidden: true
+  SalesGroupName;
+  @UI.hidden: true
+  OvrlSDDocumentRejectionStsDesc;
+  @UI.hidden: true
+  OverallDeliveryStatusDesc;
+  @UI.hidden: true
+  TotalCreditCheckStatusDesc;
+  @UI.hidden: true
+  CreditRiskClassName;
+  @UI.hidden: true
+  Percent;
+}

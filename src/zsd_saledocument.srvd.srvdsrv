@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service Definition Sale Document'
+define service ZSD_SALEDOCUMENT {
+  expose ZEP_SALEDOCUMENT;
+}
